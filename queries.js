@@ -40,7 +40,7 @@ const returnQueries = (skip) => {
 			domains(orderBy: id, orderDirection: asc, first: 1000, skip: ${skip}){
         id
         domainChainId
-        parent 
+        parent {id}
         name
         colonyAddress
         metadata{
@@ -100,7 +100,7 @@ const returnQueries = (skip) => {
 		transactions: gql`{
     transactions(orderBy: id, orderDirection: asc, first: 1000, skip: ${skip}){
       id
-      block
+      block {id}
     }
   }`,
 		blocks: gql`{
