@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "graphql-request": "^4.0.0"
+  }
+}
