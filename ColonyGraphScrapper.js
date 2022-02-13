@@ -2,24 +2,23 @@ const fs = require("fs");
 const { setPriority } = require("os");
 const requestData = require("./GQLqueryMaker");
 
-/* 
-a list of data types which can be queried:
-	colonies
-	domains
-	payments
-	oneTxPayments
-	tokens
-	fundingPots
-	transactions
-	blocks
-	events
-	colonyExtensions
-	motions
-	coinMachinePeriods
+// a list of data types which can be queried
+const dataTypes = [
+	colonies,
+	domains,
+	payments,
+	oneTxPayments,
+	tokens,
+	fundingPots,
+	transactions,
+	blocks,
+	events,
+	colonyExtensions,
+	motions,
+	coinMachinePeriods,
+];
 
-Create an array of each of these, and for each one, fetch all the available data
-*/
-
+// function to fetch all of a given datatype
 const fetchAll = async (dataType, step = 1000) => {
 	let data = [];
 	let moreToFetch = true;
@@ -44,5 +43,3 @@ const fetchAll = async (dataType, step = 1000) => {
 	fs.writeFileSync(`./data/${dataType}`, JSON.stringify(data));
 	return data;
 };
-
-fetchAll("colonies");
