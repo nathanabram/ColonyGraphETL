@@ -74,7 +74,7 @@ const returnQueries = (skip) => {
       nPayouts
       agent
       transaction {id}
-      expenditure
+      expenditure {id}
       payment {id}
     }
   }`,
